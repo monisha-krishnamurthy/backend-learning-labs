@@ -1,0 +1,3 @@
+# A requirements.txt helps us to know what a project's dependencies are
+# It is necessary so that everyone can run the same
+elasticsearch==8.2.3

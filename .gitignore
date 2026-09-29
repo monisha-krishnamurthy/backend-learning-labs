@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+pyvenv.cfg
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Generated files
+*.log
+.DS_Store
+.ipynb_checkpoints/
