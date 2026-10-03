@@ -1,5 +1,6 @@
 #psycopg2- library used to connect to the DB i.e., postgresql
 import psycopg2
+import os
 
 #connect to the db
 con = psycopg2.connect(

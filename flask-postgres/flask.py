@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import psycopg2
 import psycopg2.extras
+import os 
 
 app = Flask(__name__)
-app.secret_key = "monisha-murthy"
+app.secret_key = os.environ["FLASK_SECRET_KEY"]
 
 DB_HOST = "localhost"
 DB_NAME = "demo"
@@ -69,7 +70,7 @@ def update_student(id):
 def delete_student(id):
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-    cur.execute('DELETE FROM students WHERE id = {0}'.format(id))
+    cur.execute("DELETE FROM students WHERE id = %s", (id,))
     conn.commit()
     flash('Student Removed Successfully')
     return redirect(url_for('Index'))
